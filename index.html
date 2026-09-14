@@ -8,51 +8,43 @@
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #ff9933, #ffffff, #138808);
-            background-color: #fff5e6;
             margin: 0;
             padding: 0;
             text-align: center;
             color: #333;
-        }
-        /* दोनों तरफ गेंदे के फूल और सजावट का बॉर्डर */
-        .page-wrapper {
-            background-image: radial-gradient(circle at 20px 20px, #ffcc00 2px, transparent 0);
-            background-size: 40px 40px;
-            padding: 20px;
             min-height: 100vh;
+        }
+        .page-wrapper {
+            padding: 20px;
             box-sizing: border-box;
         }
         .container {
             max-width: 600px;
-            margin: 30px auto;
+            margin: 20px auto;
             background: #ffffff;
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0px 8px 25px rgba(0,0,0,0.25);
-            border: 4px double #ff9933;
+            /* गेंदे के फूलों और पत्तों जैसा सुंदर बॉर्डर */
+            border: 8px solid #ffcc00;
+            outline: 6px solid #ff6600;
             position: relative;
         }
-        /* गेंदे के फूलों की लड़ियाँ (Borders) */
-        .container::before, .container::after {
-            content: "🌸🌼🌸🌼🌸🌼🌸🌼🌸";
-            font-size: 20px;
-            position: absolute;
-            left: 0;
-            right: 0;
-            letter-spacing: 3px;
+        
+        /* फूलों की लड़ियाँ ऊपर और नीचे */
+        .flower-garland {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin: 10px 0;
+            font-size: 24px;
         }
-        .container::before {
-            top: 10px;
-        }
-        .container::after {
-            bottom: 10px;
-        }
+
         h1 {
             color: #d11919;
             font-size: 32px;
-            margin-top: 25px;
+            margin-top: 10px;
             margin-bottom: 5px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         h2 {
             color: #ff6600;
@@ -60,16 +52,40 @@
             margin-top: 5px;
             margin-bottom: 20px;
         }
-        /* एनिमेटेड इमेज स्टाइल */
-        .ganesh-img {
-            width: 85%;
-            max-width: 280px;
-            border-radius: 15px;
-            margin: 15px 0;
-            box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
-            border: 3px solid #ff9933;
-            background-color: #fffbf5;
+
+        /* कोड से बना एनिमेटेड चमकता हुआ दीया (बिना किसी फोटो के लोड होगा) */
+        .diya-container {
+            margin: 30px auto;
+            width: 100px;
+            height: 100px;
+            position: relative;
         }
+        .diya-base {
+            width: 100px;
+            height: 50px;
+            background: #d11919;
+            border-radius: 0 0 100px 100px;
+            position: absolute;
+            bottom: 10px;
+            border: 3px solid #ffcc00;
+        }
+        .diya-flame {
+            width: 24px;
+            height: 40px;
+            background: #ffcc00;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            position: absolute;
+            top: 12px;
+            left: 41px;
+            animation: flicker 0.1s ease-in-out infinite alternate;
+            background: linear-gradient(to bottom, #ff3300, #ffcc00);
+            box-shadow: 0 0 20px #ffcc00;
+        }
+        @keyframes flicker {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1) rotate(2deg); }
+        }
+
         .message {
             font-size: 19px;
             line-height: 1.7;
@@ -79,7 +95,7 @@
         }
         .footer {
             margin-top: 30px;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             font-weight: bold;
             color: #d11919;
             font-size: 20px;
@@ -100,11 +116,17 @@
 
     <div class="page-wrapper">
         <div class="container">
+            <!-- ऊपर फूलों की लड़ी -->
+            <div class="flower-garland">🌸🌼🌸🌼🌸🌼🌸🌼🌸🌼🌸</div>
+
             <h1>🚩 जय श्री गणेश 🚩</h1>
             <h2>गणेश चतुर्थी की हार्दिक शुभकामनाएं</h2>
             
-            <!-- सुरक्षित एनिमेटेड गणेश जी की फोटो (GIF) -->
-            <img class="ganesh-img" src="https://giphy.com" alt="Lord Ganesha Animated">
+            <!-- बिना फोटो के चलने वाला एनिमेटेड लाइव दीया -->
+            <div class="diya-container">
+                <div class="diya-flame"></div>
+                <div class="diya-base"></div>
+            </div>
             
             <div class="message">
                 <p>भगवान श्री गणेश आपके जीवन में सुख, समृद्धि, रिद्धि-सिद्धि और अपार खुशियाँ लेकर आएं। इस पावन पर्व पर आपके व्यापार और परिवार में मंगल ही मंगल हो।</p>
@@ -115,6 +137,9 @@
                 शुभकामनाओं सहित:
                 <span class="company-name">ROSY GROUP OF COMPANY</span>
             </div>
+
+            <!-- नीचे फूलों की लड़ी -->
+            <div class="flower-garland">🌸🌼🌸🌼🌸🌼🌸🌼🌸🌼🌸</div>
         </div>
     </div>
 
