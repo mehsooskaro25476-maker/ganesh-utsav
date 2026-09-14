@@ -51,32 +51,23 @@
             margin-bottom: 20px;
         }
 
-        /* कोड से तैयार किया गया भगवान गणेश जी का प्रतीक (कलश और स्वस्तिक रूप) */
-        .ganesha-symbol-container {
-            margin: 25px auto;
-            width: 140px;
-            height: 140px;
-            background: #fff0e0;
-            border-radius: 50%;
-            border: 3px dashed #d11919;
+        /* कोड से बनी भगवान गणेश जी की सुंदर और सुरक्षित लाइव मूर्ति */
+        .ganesha-art-container {
+            margin: 20px auto;
+            width: 180px;
+            height: 180px;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        
-        .ganesha-text-icon {
-            font-size: 75px;
-            color: #d11919;
-            line-height: 1;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(255, 102, 0, 0.3);
-            animation: holyGlow 1.5s ease-in-out infinite alternate;
+            background: radial-gradient(circle, #fff3e0 60%, transparent 100%);
+            border-radius: 50%;
+            padding: 10px;
+            animation: holyGlow 2s ease-in-out infinite alternate;
         }
 
         @keyframes holyGlow {
-            0% { transform: scale(1); text-shadow: 0 0 10px #ff9933; }
-            100% { transform: scale(1.05); text-shadow: 0 0 20px #ff6600, 0 0 30px #ff3300; }
+            0% { transform: scale(0.98); box-shadow: 0 0 15px rgba(255, 153, 51, 0.4); }
+            100% { transform: scale(1.02); box-shadow: 0 0 30px rgba(255, 102, 0, 0.7); }
         }
 
         .message {
@@ -115,9 +106,32 @@
             <h1>🚩 जय श्री गणेश 🚩</h1>
             <h2>गणेश चतुर्थी की हार्दिक शुभकामनाएं</h2>
             
-            <!-- 100% सेफ और हमेशा दिखने वाला एनिमेटेड गणेश जी का पावन प्रतीक -->
-            <div class="ganesha-symbol-container">
-                <div class="ganesha-text-icon">ॐ</div>
+            <!-- कोड द्वारा निर्मित भगवान गणेश जी का दिव्य रूप (स्वर्ण कलाकृति) -->
+            <div class="ganesha-art-container">
+                <svg width="150" height="150" viewBox="0 0 100 100" xmlns="http://w3.org">
+                    <!-- मुकुट और मस्तक -->
+                    <path d="M50,15 L45,5 L55,5 Z" fill="#ffcc00" stroke="#d11919" stroke-width="1"/>
+                    <circle cx="50" cy="8" r="2" fill="#d11919"/>
+                    <path d="M42,20 Q50,12 58,20 Q50,22 42,20" fill="#ff9933" stroke="#d11919" stroke-width="1.5"/>
+                    
+                    <!-- कान -->
+                    <path d="M42,25 Q25,20 32,40 Q40,42 42,35" fill="#ff9933" stroke="#d11919" stroke-width="1.5"/>
+                    <path d="M58,25 Q75,20 68,40 Q60,42 58,35" fill="#ff9933" stroke="#d11919" stroke-width="1.5"/>
+                    
+                    <!-- सूंड और चेहरा -->
+                    <path d="M44,25 Q50,28 56,25 Q54,42 50,48 Q42,55 45,65 Q48,70 55,68 Q58,62 53,58 Q48,54 50,44" fill="none" stroke="#d11919" stroke-width="3.5" stroke-linecap="round"/>
+                    
+                    <!-- तिलक -->
+                    <path d="M48,22 Q50,17 52,22 Z" fill="#d11919"/>
+                    <line x1="46" y1="24" x2="54" y2="24" stroke="#ffcc00" stroke-width="1"/>
+                    
+                    <!-- लड्डू (मोदक) -->
+                    <circle cx="54" cy="64" r="3" fill="#ffcc00" stroke="#ff6600" stroke-width="0.5"/>
+                    
+                    <!-- आंखें -->
+                    <circle cx="46" cy="28" r="1" fill="#333"/>
+                    <circle cx="54" cy="28" r="1" fill="#333"/>
+                </svg>
             </div>
             
             <div class="message">
